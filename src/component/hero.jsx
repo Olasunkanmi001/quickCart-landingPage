@@ -1,23 +1,18 @@
 import React from "react";
 import { FaStore, FaBiking } from "react-icons/fa";
 import picture from "../assets/front-view-woman-wearing-hat (1) 1.png";
+import pic from "../assets/layer_1.png";
 
 const HeroSection = () => {
   return (
     <section className="w-full bg-white font-sans pt-5">
       {/* Top bar: Become Vendor / Rider */}
       <div className="w-full bg-[#E6F2FF] flex justify-end items-center space-x-8 text-base text-gray-800 h-16 px-6 md:px-16">
-        <a
-          href="#vendor"
-          className="flex items-center space-x-2 "
-        >
+        <a href="#vendor" className="flex items-center space-x-2">
           <FaStore size={22} />
           <span>Become a Vendor</span>
         </a>
-        <a
-          href="#rider"
-          className="flex items-center space-x-2"
-        >
+        <a href="#rider" className="flex items-center space-x-2">
           <FaBiking size={22} />
           <span>Become a Rider</span>
         </a>
@@ -27,7 +22,7 @@ const HeroSection = () => {
       <div className="px-6 md:px-16 py-10 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
         {/* Left side */}
         <div className="md:w-1/2 space-y-6 pt-5">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight ">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
             Shop nearby fashion. <br /> Delivered in minutes.
           </h1>
 
@@ -68,15 +63,23 @@ const HeroSection = () => {
         </div>
 
         {/* Right side image */}
-        <div className="md:w-1/2 flex flex-col items-center md:items-end space-y-4">
+        <div className="md:w-1/2 flex flex-col items-center md:items-start space-y-4">
           <img
             src={picture}
             alt="Model showcasing clothes"
             className="w-full md:w-5/2 rounded-lg object-cover"
           />
 
-          <div className="flex items-center space-x-3">
-            <p className="text-sm text-gray-600">Scan to download App</p>
+          {/* QR Section (aligned to left) */}
+          <div className="flex items-center justify-start space-x-3 mt-2 w-full md:w-auto">
+            <img
+              src={pic}
+              alt="QR code"
+              className="w-16 h-16 object-contain"
+            />
+            <p className="text-sm text-gray-700 font-medium">
+              Scan to download App
+            </p>
           </div>
         </div>
       </div>
