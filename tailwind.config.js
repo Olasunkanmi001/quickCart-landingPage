@@ -7,6 +7,13 @@ export default {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
       },
+      colors: {
+        "custom-green-start": "#01AC74",
+        "custom-green-end": "#08A420",
+      },
+      backgroundImage: {
+        "gradient-green": "linear-gradient(to right, #01AC74 0%, #08A420 80%)",
+      },
     },
   },
   plugins: [],
