@@ -11,11 +11,20 @@ const Footer = () => {
     setEmail("");
   };
 
+  // Add styles for placeholder color
+  const inputStyles = `
+    .newsletter-input::placeholder {
+      color: #01AC74 !important;
+      opacity: 0.7;
+    }
+  `;
+
   return (
     <footer className="bg-black text-white">
+      <style>{inputStyles}</style>
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-7 gap-8">
           {/* Logo and Message Section */}
           <div className="lg:col-span-2">
             <div className="mb-4">
@@ -126,22 +135,30 @@ const Footer = () => {
           </div>
 
           {/* Newsletter Subscription */}
-          <div>
+          <div className="lg:col-span-2">
             <h3 className="text-white font-inter font-bold text-2xl mb-4">
               Newsletter
             </h3>
-            <form onSubmit={handleEmailSubmit} className="space-y-3">
+            <form
+              onSubmit={handleEmailSubmit}
+              className="flex gap-2 items-center max-w-md"
+            >
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                className="newsletter-input flex-1 px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none"
+                style={{
+                  color: "#01AC74",
+                  borderColor: email ? "#01AC74" : undefined,
+                }}
                 required
               />
               <button
                 type="submit"
-                className="w-full px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+                className="px-3 py-2 bg-white hover:bg-gray-50 active:bg-gray-200 active:scale-95 rounded-lg font-medium transition-all duration-150 transform text-xs"
+                style={{ color: "#01AC74" }}
               >
                 Subscribe Now
               </button>
