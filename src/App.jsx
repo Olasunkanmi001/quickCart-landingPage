@@ -4,6 +4,8 @@ import Hero from './component/hero'
 import Marketplace from './component/marketPlace'
 import Howitworks from './component/howitworks'
 import Swiper from './component/swiper'
+import Vendor from './component/vendor'
+import Info from './component/infoSection'
 
 
 export default function App() {
@@ -14,6 +16,8 @@ export default function App() {
     <Hero/>
     <Howitworks/>
     <Marketplace/>
+    <Vendor/>
+    <Info/>
     <Swiper/>
    
 
