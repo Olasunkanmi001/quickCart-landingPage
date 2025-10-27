@@ -13,11 +13,21 @@ export default function App() {
     <div>
       <Header />
       <Hero />
-      <Howitworks />
-      <Marketplace />
-      <Vendor />
-      <Info />
-      <Swiper />
+      <section id="how-it-works">
+        <Howitworks />
+      </section>
+      <section id="marketplace">
+        <Marketplace />
+      </section>
+      <section id="vendors">
+        <Vendor />
+      </section>
+      <section id="pricing">
+        <Info />
+      </section>
+      <section id="faqs">
+        <Swiper />
+      </section>
       <Footer />
     </div>
   );
