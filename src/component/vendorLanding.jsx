@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import VendorHero from "./vendorHero";
+import VendorFeatures from "./vendorFeatures";
 import {
   FaArrowLeft,
   FaStore,
@@ -26,49 +27,8 @@ const VendorLanding = () => {
       {/* Hero Section */}
       <VendorHero />
 
-      {/* Benefits Section */}
-      <section className="px-6 md:px-16 py-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            Why Choose QuickCart?
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaDollarSign className="text-green-600" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Higher Earnings</h3>
-              <p className="text-gray-600">
-                Keep more of what you earn with our competitive commission rates
-                and transparent pricing.
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaUsers className="text-blue-600" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Local Customers</h3>
-              <p className="text-gray-600">
-                Connect with customers in your neighborhood and build lasting
-                relationships.
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaChartLine className="text-purple-600" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Business Growth</h3>
-              <p className="text-gray-600">
-                Access analytics and tools to help grow your business and
-                increase sales.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Features Section */}
+      <VendorFeatures />
 
       {/* How it Works Section */}
       <section className="px-6 md:px-16 py-16 bg-gray-50">
