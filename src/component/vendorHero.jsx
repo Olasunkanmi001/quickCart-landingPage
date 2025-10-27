@@ -2,7 +2,7 @@ import React from "react";
 
 const VendorHero = () => {
   return (
-    <section className="px-6 md:px-16 py-16 bg-white">
+    <section className="px-6 md:px-16 py-16 bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
