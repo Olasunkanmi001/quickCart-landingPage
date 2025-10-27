@@ -9,7 +9,10 @@ const HeroSection = () => {
     <section className="w-full bg-white font-sans pt-5">
       {/* Top bar: Become Vendor / Rider */}
       <div className="w-full bg-[#E6F2FF] flex justify-end items-center space-x-8 text-base text-gray-800 h-16 px-6 md:px-16">
-        <Link to="/vendorLanding" className="flex items-center space-x-2 hover:text-blue-600 transition-colors">
+        <Link
+          to="/vendorLanding"
+          className="flex items-center space-x-2 hover:text-gray-600 active:scale-95 transition-all duration-150"
+        >
           <FaStore size={22} />
           <span>Become a Vendor</span>
         </Link>
@@ -28,9 +31,9 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-gray-600 leading-relaxed">
-            Discover in-stock clothes, shoes, and jewellery from verified vendors
-            around you. Pay securely by Card/Bank/USSD and track your rider live —
-            every order step is recorded for peace of mind.
+            Discover in-stock clothes, shoes, and jewellery from verified
+            vendors around you. Pay securely by Card/Bank/USSD and track your
+            rider live — every order step is recorded for peace of mind.
           </p>
 
           {/* CTA Buttons */}
@@ -57,8 +60,7 @@ const HeroSection = () => {
 
           {/* Feature tags */}
           <div className="flex flex-wrap gap-2 text-sm text-gray-500 mt-3">
-            <span>No hidden fees</span> •
-            <span>Real-time updates</span> •
+            <span>No hidden fees</span> •<span>Real-time updates</span> •
             <span>Loyalty rewards</span>
           </div>
         </div>
@@ -73,11 +75,7 @@ const HeroSection = () => {
 
           {/* QR Section (aligned to left) */}
           <div className="flex items-center justify-start space-x-3 mt-2 w-full md:w-auto">
-            <img
-              src={pic}
-              alt="QR code"
-              className="w-16 h-16 object-contain"
-            />
+            <img src={pic} alt="QR code" className="w-16 h-16 object-contain" />
             <p className="text-sm text-gray-700 font-medium">
               Scan to download App
             </p>
