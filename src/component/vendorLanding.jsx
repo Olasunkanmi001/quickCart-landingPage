@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import VendorHero from "./vendorHero";
 import VendorFeatures from "./vendorFeatures";
+import Testimonial from "./Testimonial";
 import {
   FaArrowLeft,
   FaStore,
@@ -30,54 +31,8 @@ const VendorLanding = () => {
       {/* Features Section */}
       <VendorFeatures />
 
-      {/* How it Works Section */}
-      <section className="px-6 md:px-16 py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            How It Works
-          </h2>
-
-          <div className="space-y-8">
-            <div className="flex items-start space-x-4">
-              <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Sign Up</h3>
-                <p className="text-gray-600">
-                  Create your vendor account and verify your business
-                  information.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Add Products</h3>
-                <p className="text-gray-600">
-                  Upload your product catalog with photos, descriptions, and
-                  pricing.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Start Selling</h3>
-                <p className="text-gray-600">
-                  Receive orders, fulfill them, and get paid automatically.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Testimonials Section */}
+      <Testimonial />
 
       {/* CTA Section */}
       <section className="px-6 md:px-16 py-16 bg-blue-600 text-white">
