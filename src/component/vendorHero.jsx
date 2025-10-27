@@ -26,7 +26,7 @@ const VendorHero = () => {
             <div className="flex gap-[11.43px] items-center">
               {/* Start Selling Now Button */}
               <button
-                className="bg-gradient-to-r from-[#01AC74] to-[#08A420] text-white font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-[#01AC74] to-[#08A420] text-white font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                 style={{
                   width: "302.57px",
                   height: "56px",
@@ -38,7 +38,7 @@ const VendorHero = () => {
 
               {/* Watch Demo Button */}
               <button
-                className="bg-white border-2 font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="bg-white border-2 font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                 style={{
                   width: "215.57px",
                   height: "56px",
