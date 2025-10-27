@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa"; // 🌙☀️ icons for dark mode toggle
+import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: "How it Works", href: "#how-it-works" },
@@ -18,6 +21,18 @@ const Header = () => {
   const handleSmoothScroll = (e, href) => {
     e.preventDefault();
 
+    // Check if we're on the home page
+    const isHomePage = location.pathname === "/";
+
+    if (!isHomePage) {
+      // If not on home page, navigate to home with the section hash
+      navigate(`/${href}`);
+      // Close mobile menu if open
+      setIsOpen(false);
+      return;
+    }
+
+    // If on home page, scroll to the section
     const target = document.querySelector(href);
 
     if (target) {
@@ -30,7 +45,7 @@ const Header = () => {
         top: targetPosition,
         behavior: "smooth",
       });
-
+    } else {
       // Fallback: try without the hash
       const elementId = href.replace("#", "");
       const fallbackTarget = document.getElementById(elementId);
