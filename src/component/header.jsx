@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa"; // 🌙☀️ icons for dark mode toggle
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const Header = () => {
@@ -73,7 +73,9 @@ const Header = () => {
     >
       {/* Logo */}
       <div>
-        <img src={logo} className="w-32" />
+        <Link to="/">
+          <img src={logo} className="w-32" />
+        </Link>
       </div>
 
       {/* Navigation Links */}
