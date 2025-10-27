@@ -17,40 +17,35 @@ const Header = () => {
   // Smooth scroll function
   const handleSmoothScroll = (e, href) => {
     e.preventDefault();
-    console.log('Trying to scroll to:', href); // Debug log
-    
+
     const target = document.querySelector(href);
-    console.log('Target element found:', target); // Debug log
-    
+
     if (target) {
       // Get header height to offset scroll position
-      const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+      const headerHeight = document.querySelector("header")?.offsetHeight || 80;
       const targetPosition = target.offsetTop - headerHeight;
-      
+
       // Use window.scrollTo as primary method
       window.scrollTo({
         top: targetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
-      
-      console.log('Scrolling to position:', targetPosition); // Debug log
-    } else {
-      console.log('Target element not found for:', href); // Debug log
-      
+
       // Fallback: try without the hash
-      const elementId = href.replace('#', '');
+      const elementId = href.replace("#", "");
       const fallbackTarget = document.getElementById(elementId);
       if (fallbackTarget) {
-        const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+        const headerHeight =
+          document.querySelector("header")?.offsetHeight || 80;
         const targetPosition = fallbackTarget.offsetTop - headerHeight;
         window.scrollTo({
           top: targetPosition,
-          behavior: "smooth"
+          behavior: "smooth",
         });
-        console.log('Fallback scroll successful'); // Debug log
+        console.log("Fallback scroll successful"); // Debug log
       }
     }
-    
+
     // Close mobile menu if open
     setIsOpen(false);
   };
