@@ -68,7 +68,7 @@ const VendorFeatures = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300"
+              className="bg-white border border-gray-400 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300"
             >
               {/* Icon */}
               <div className="mb-6">{feature.icon}</div>
