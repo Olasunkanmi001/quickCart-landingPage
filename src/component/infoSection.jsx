@@ -1,38 +1,51 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import qrCode from "../assets/layer_1.png"; // replace with your actual QR image
 import vendorImg from "../assets/Rectangle 4672.png";
 import riderImg from "../assets/Rectangle 4672 (1).png";
-import avatar1 from '../assets/Avatar (6).png';
-import avatar2 from '../assets/Avatar (4).png';
-import avatar3 from '../assets/Avatar (5).png';
+import avatar1 from "../assets/Avatar (6).png";
+import avatar2 from "../assets/Avatar (4).png";
+import avatar3 from "../assets/Avatar (5).png";
 
 const QuickCartInfoSection = () => {
   return (
     <section className="w-full bg-white py-16 px-6 md:px-12 font-sans text-gray-800 space-y-20">
-
       {/* Confidence Built In */}
       <div>
         <h2 className="text-2xl font-semibold mb-2">Confidence built in</h2>
         <p className="text-gray-600 mb-6">
-          Digital receipts, OTP + photo proof, escrow, and optional blockchain-based logs.
+          Digital receipts, OTP + photo proof, escrow, and optional
+          blockchain-based logs.
         </p>
 
         <div className="flex flex-col md:flex-row md:items-start gap-6">
           <div className="flex-1 border rounded-xl p-6 bg-gray-50">
-            <p className="text-gray-700">Order timeline and live route tracking on a map</p>
+            <p className="text-gray-700">
+              Order timeline and live route tracking on a map
+            </p>
           </div>
           <div className="flex-1 border rounded-xl p-6 space-y-3 text-sm">
-            <p>✅ Every step logged: order created → confirmed → picked up → delivered.</p>
+            <p>
+              ✅ Every step logged: order created → confirmed → picked up →
+              delivered.
+            </p>
             <p>✅ Proof of delivery: OTP + photo confirmation before payout.</p>
-            <p>✅ Buyer protection: funds held in escrow until you receive your item.</p>
-            <p>✅ Private by design: personal data stays off-chain; profits only.</p>
+            <p>
+              ✅ Buyer protection: funds held in escrow until you receive your
+              item.
+            </p>
+            <p>
+              ✅ Private by design: personal data stays off-chain; profits only.
+            </p>
           </div>
         </div>
       </div>
 
       {/* Loved by Buyers and Sellers */}
       <div>
-        <h2 className="text-2xl font-semibold mb-4">Loved by buyers and sellers</h2>
+        <h2 className="text-2xl font-semibold mb-4">
+          Loved by buyers and sellers
+        </h2>
         <div className="grid md:grid-cols-3 gap-4">
           {[
             {
@@ -75,15 +88,20 @@ const QuickCartInfoSection = () => {
       {/* Sell More / Become Vendor */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-10">
         <div className="flex-1">
-          <h2 className="text-2xl font-semibold mb-3">Sell more — without another shop</h2>
+          <h2 className="text-2xl font-semibold mb-3">
+            Sell more — without another shop
+          </h2>
           <ul className="list-disc ml-5 text-gray-700 text-sm mb-6 space-y-2">
             <li>KYC in minutes, get the “Verified” badge</li>
             <li>Simple catalog & inventory tools</li>
             <li>Escrow & digital receipts reduce disputes</li>
           </ul>
-          <button className="bg-black text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-800">
+          <Link
+            to="/vendorLanding"
+            className="bg-black text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-800 inline-block transition-colors"
+          >
             Become a Vendor
-          </button>
+          </Link>
         </div>
         <img
           src={vendorImg}
@@ -99,7 +117,8 @@ const QuickCartInfoSection = () => {
             Ride. Deliver. Get paid instantly.
           </h2>
           <p className="text-sm text-gray-700 mb-6">
-            Flexible hours, in-app navigation, and instant payouts after delivery completion.
+            Flexible hours, in-app navigation, and instant payouts after
+            delivery completion.
           </p>
           <button className="bg-black text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-800">
             Become a Rider
@@ -114,15 +133,20 @@ const QuickCartInfoSection = () => {
 
       {/* Simple Transparent Pricing */}
       <div>
-        <h2 className="text-2xl font-semibold mb-3">Simple, transparent pricing</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Simple, transparent pricing
+        </h2>
         <p className="text-sm text-gray-700 mb-6">
-          Flexible hours, in-app navigation, and instant pay-outs after delivery completion.
+          Flexible hours, in-app navigation, and instant pay-outs after delivery
+          completion.
         </p>
 
         <div className="grid md:grid-cols-3 gap-4 text-sm">
           <div className="border rounded-xl p-4">
             <h4 className="font-semibold mb-2">For Buyers</h4>
-            <p className="text-gray-600">Delivery fee based on distance. No hidden charges.</p>
+            <p className="text-gray-600">
+              Delivery fee based on distance. No hidden charges.
+            </p>
           </div>
           <div className="border rounded-xl p-4">
             <h4 className="font-semibold mb-2">For Vendors</h4>
@@ -143,7 +167,8 @@ const QuickCartInfoSection = () => {
       <div className="text-center">
         <h2 className="text-2xl font-semibold mb-3">Download QuickCart now</h2>
         <p className="text-sm text-gray-700 mb-6">
-          Flexible hours, in-app navigation, and instant payouts after delivery completion.
+          Flexible hours, in-app navigation, and instant payouts after delivery
+          completion.
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
@@ -158,7 +183,6 @@ const QuickCartInfoSection = () => {
           </div>
         </div>
       </div>
-
     </section>
   );
 };
