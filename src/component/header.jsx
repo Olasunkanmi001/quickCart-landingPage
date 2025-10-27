@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa"; // 🌙☀️ icons for dark mode toggle
-import logo from '../assets/logo.png';
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +14,47 @@ const Header = () => {
     { name: "FAQs", href: "#faqs" },
   ];
 
+  // Smooth scroll function
+  const handleSmoothScroll = (e, href) => {
+    e.preventDefault();
+    console.log('Trying to scroll to:', href); // Debug log
+    
+    const target = document.querySelector(href);
+    console.log('Target element found:', target); // Debug log
+    
+    if (target) {
+      // Get header height to offset scroll position
+      const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+      const targetPosition = target.offsetTop - headerHeight;
+      
+      // Use window.scrollTo as primary method
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+      
+      console.log('Scrolling to position:', targetPosition); // Debug log
+    } else {
+      console.log('Target element not found for:', href); // Debug log
+      
+      // Fallback: try without the hash
+      const elementId = href.replace('#', '');
+      const fallbackTarget = document.getElementById(elementId);
+      if (fallbackTarget) {
+        const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+        const targetPosition = fallbackTarget.offsetTop - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth"
+        });
+        console.log('Fallback scroll successful'); // Debug log
+      }
+    }
+    
+    // Close mobile menu if open
+    setIsOpen(false);
+  };
+
   return (
     <header
       className={`${
@@ -22,7 +63,7 @@ const Header = () => {
     >
       {/* Logo */}
       <div>
-        <img src={logo}  className="w-32"/>
+        <img src={logo} className="w-32" />
       </div>
 
       {/* Navigation Links */}
@@ -31,7 +72,9 @@ const Header = () => {
           <a
             key={link.name}
             href={link.href}
-            className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+            onClick={(e) => handleSmoothScroll(e, link.href)}
+            className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+          >
             {link.name}
           </a>
         ))}
@@ -41,13 +84,11 @@ const Header = () => {
       <div className="hidden md:flex items-center w-1/3 mx-6">
         <input
           type="text"
-          placeholder="Try 'Ankara Gown', 'Men’s Loafers'" 
+          placeholder="Try 'Ankara Gown', 'Men’s Loafers'"
           className="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-gray-300 placeholder:text-gray-300"
         />
-       
       </div>
 
-      
       <div className="flex items-center space-x-4">
         {/* Dark mode toggle */}
         <button
@@ -83,9 +124,7 @@ const Header = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d={
-                isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
-              }
+              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
             />
           </svg>
         </button>
@@ -102,8 +141,8 @@ const Header = () => {
             <a
               key={link.name}
               href={link.href}
-              className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleSmoothScroll(e, link.href)}
+              className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
             >
               {link.name}
             </a>
@@ -114,7 +153,6 @@ const Header = () => {
               placeholder="Search items..."
               className="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-gray-300 placeholder:text-gray-300"
             />
-           
           </div>
           <button className="w-full bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
             Get App
