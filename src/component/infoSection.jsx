@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import qrCode from "../assets/layer_1.png"; // replace with your actual QR image
 import vendorImg from "../assets/Rectangle 4672.png";
 import riderImg from "../assets/Rectangle 4672 (1).png";
@@ -8,6 +8,26 @@ import avatar2 from "../assets/Avatar (4).png";
 import avatar3 from "../assets/Avatar (5).png";
 
 const QuickCartInfoSection = () => {
+  const navigate = useNavigate();
+
+  const handleRiderClick = () => {
+    navigate("/riderLanding");
+    setTimeout(() => {
+      if (window.scrollY > 0) {
+        window.scrollTo(0, 0);
+      }
+    }, 100);
+  };
+
+  const handleVendorClick = () => {
+    navigate("/vendorLanding");
+    setTimeout(() => {
+      if (window.scrollY > 0) {
+        window.scrollTo(0, 0);
+      }
+    }, 100);
+  };
+
   return (
     <section className="w-full bg-white py-16 px-6 md:px-12 font-sans text-gray-800 space-y-20">
       {/* Confidence Built In */}
@@ -96,13 +116,12 @@ const QuickCartInfoSection = () => {
             <li>Simple catalog & inventory tools</li>
             <li>Escrow & digital receipts reduce disputes</li>
           </ul>
-          <Link
-            to="/vendorLanding"
-            replace
-            className="bg-black text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-800 inline-block active:scale-95 transition-all duration-150"
+          <button
+            onClick={handleVendorClick}
+            className="bg-black text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-800"
           >
             Become a Vendor
-          </Link>
+          </button>
         </div>
         <img
           src={vendorImg}
@@ -121,7 +140,10 @@ const QuickCartInfoSection = () => {
             Flexible hours, in-app navigation, and instant payouts after
             delivery completion.
           </p>
-          <button className="bg-black text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-800">
+          <button
+            onClick={handleRiderClick}
+            className="bg-black text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-800"
+          >
             Become a Rider
           </button>
         </div>
