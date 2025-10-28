@@ -16,10 +16,13 @@ const HeroSection = () => {
           <FaStore size={22} />
           <span>Become a Vendor</span>
         </Link>
-        <a href="#rider" className="flex items-center space-x-2">
+        <Link
+          to="/riderLanding"
+          className="flex items-center space-x-2 hover:text-gray-600 active:scale-95 transition-all duration-150"
+        >
           <FaBiking size={22} />
           <span>Become a Rider</span>
-        </a>
+        </Link>
       </div>
 
       {/* Main hero area */}
