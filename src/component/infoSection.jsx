@@ -98,6 +98,7 @@ const QuickCartInfoSection = () => {
           </ul>
           <Link
             to="/vendorLanding"
+            replace
             className="bg-black text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-800 inline-block active:scale-95 transition-all duration-150"
           >
             Become a Vendor
