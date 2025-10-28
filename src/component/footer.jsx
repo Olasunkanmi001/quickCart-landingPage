@@ -141,14 +141,14 @@ const Footer = () => {
             </h3>
             <form
               onSubmit={handleEmailSubmit}
-              className="flex gap-2 items-center max-w-md"
+              className="flex gap-2 items-stretch max-w-md"
             >
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="newsletter-input flex-1 px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none"
+                className="newsletter-input flex-1 px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none"
                 style={{
                   color: "#01AC74",
                   borderColor: email ? "#01AC74" : undefined,
@@ -157,7 +157,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="px-3 py-2 bg-white hover:bg-gray-50 active:bg-gray-200 active:scale-95 rounded-lg font-medium transition-all duration-150 transform text-xs"
+                className="px-4 py-3 bg-white hover:bg-gray-50 active:bg-gray-200 active:scale-95 rounded-lg font-medium transition-all duration-150 transform text-xs whitespace-nowrap"
                 style={{ color: "#01AC74" }}
               >
                 Subscribe Now
