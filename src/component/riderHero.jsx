@@ -14,10 +14,7 @@ const RiderHero = () => {
             >
               Your time. Your goals.
               <br />
-              <span className="bg-gradient-to-r from-[#01AC74] to-[#08A420] bg-clip-text text-transparent">
-                {" "}
-                You're the boss.
-              </span>
+              You're the boss.
             </h1>
 
             {/* Subtitle */}
@@ -29,7 +26,7 @@ const RiderHero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-[11.43px] items-center justify-center lg:justify-start">
               {/* Become a Driver Button */}
-              <button className="bg-gradient-to-r from-[#01AC74] to-[#08A420] text-white font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 text-sm md:text-base">
+              <button className="bg-[#0B4863] text-white font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 text-sm md:text-base">
                 Become a Driver
               </button>
             </div>
