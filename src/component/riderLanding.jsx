@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import RiderHero from "./riderHero";
+import RiderInfo from "./riderInfo";
 import {
   FaArrowLeft,
   FaBiking,
@@ -31,6 +32,7 @@ const RiderLanding = () => {
       {/* Hero Section */}
       <RiderHero />
       {/* Info Section */}
+      <RiderInfo />
 
       {/* Why Work With Us Section */}
 
