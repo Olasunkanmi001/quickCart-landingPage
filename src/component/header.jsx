@@ -11,6 +11,8 @@ const Header = () => {
 
   // Check if we're on the vendor landing page
   const isVendorLandingPage = location.pathname === "/vendorLanding";
+  // Check if we're on the rider landing page
+  const isRiderLandingPage = location.pathname === "/riderLanding";
 
   const navLinks = [
     { name: "How it Works", href: "#how-it-works" },
@@ -123,8 +125,26 @@ const Header = () => {
           </>
         )}
 
-        {/* Show Get App button when NOT on vendor landing page */}
-        {!isVendorLandingPage && (
+        {/* Conditionally show Login and Get Started Free only on rider landing page */}
+        {isRiderLandingPage && (
+          <>
+            {/* Login Link */}
+            <Link
+              to="/login"
+              className="text-gray-700 hover:text-black font-medium transition-colors duration-300"
+            >
+              Login
+            </Link>
+
+            {/* Get Started Free button */}
+            <button className="bg-[#0B4863] text-white font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center px-4 py-2 text-sm">
+              Get Started Free
+            </button>
+          </>
+        )}
+
+        {/* Show Get App button when NOT on vendor or rider landing page */}
+        {!isVendorLandingPage && !isRiderLandingPage && (
           <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
             Get App
           </button>
@@ -190,7 +210,7 @@ const Header = () => {
             />
           </div>
 
-          {/* Conditionally show Login and Get Started Free only on vendor landing page */}
+          {/* Conditionally show Login and Get Started Free based on current page */}
           {isVendorLandingPage ? (
             <>
               {/* Login Link */}
@@ -202,7 +222,7 @@ const Header = () => {
                 Login
               </Link>
 
-              {/* Get Started Free button */}
+              {/* Get Started Free button - Vendor */}
               <button
                 className="w-full bg-gradient-to-r from-[#01AC74] to-[#08A420] text-white font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center py-3"
                 onClick={() => setIsOpen(false)}
@@ -210,8 +230,27 @@ const Header = () => {
                 Get Started Free
               </button>
             </>
+          ) : isRiderLandingPage ? (
+            <>
+              {/* Login Link */}
+              <Link
+                to="/login"
+                className="text-gray-700 hover:text-black font-medium transition-colors duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                Login
+              </Link>
+
+              {/* Get Started Free button - Rider */}
+              <button
+                className="w-full bg-[#0B4863] text-white font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center py-3"
+                onClick={() => setIsOpen(false)}
+              >
+                Get Started Free
+              </button>
+            </>
           ) : (
-            /* Show Get App button when NOT on vendor landing page */
+            /* Show Get App button when NOT on vendor or rider landing page */
             <button
               className="w-full bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
               onClick={() => setIsOpen(false)}
