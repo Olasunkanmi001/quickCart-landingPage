@@ -35,7 +35,7 @@ const VendorWaitlist = () => {
   `;
 
   return (
-    <section className="px-4 md:px-8 lg:px-16 py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#01AC74] via-[#05B177] to-[#08A420] relative overflow-hidden">
+    <section className="px-4 md:px-8 lg:px-16 py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#01AC74]  to-[#08A420] relative overflow-hidden">
       {/* Additional gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
       <style>{inputStyles}</style>
@@ -89,7 +89,10 @@ const VendorWaitlist = () => {
         </form>
 
         {/* Fine Print */}
-        <p className="font-nunito font-medium text-[14px] md:text-[16px] lg:text-[18px] text-white opacity-80 mt-4 md:mt-6 px-4" style={{ lineHeight: '1.6' }}>
+        <p
+          className="font-nunito font-medium text-[14px] md:text-[16px] lg:text-[18px] text-white opacity-80 mt-4 md:mt-6 px-4"
+          style={{ lineHeight: "1.6" }}
+        >
           No credit card required. 14-day free trial.
         </p>
       </div>
