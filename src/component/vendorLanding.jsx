@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import VendorHero from "./vendorHero";
 import VendorFeatures from "./vendorFeatures";
 import Testimonial from "./Testimonial";
+import VendorPricing from "./vendorPricing";
 import {
   FaArrowLeft,
   FaStore,
@@ -33,7 +34,8 @@ const VendorLanding = () => {
 
       {/* Testimonials Section */}
       <Testimonial />
-
+      {/* Vendor Pricing Section */}
+      <VendorPricing />
       {/* CTA Section */}
       <section className="px-6 md:px-16 py-16 bg-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
