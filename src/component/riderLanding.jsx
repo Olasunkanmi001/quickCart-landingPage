@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import RiderHero from "./riderHero";
 import {
   FaArrowLeft,
   FaBiking,
@@ -28,14 +29,14 @@ const RiderLanding = () => {
       </div>
 
       {/* Hero Section */}
+      <RiderHero />
+      {/* Info Section */}
 
-      {/* Features Section */}
+      {/* Why Work With Us Section */}
 
-      {/* Testimonials Section */}
+      {/* AI Assistant Section */}
 
-      {/* Vendor Pricing Section */}
-
-      {/* Vendor Waitlist Section */}
+      {/* CTA Section */}
     </div>
   );
 };
