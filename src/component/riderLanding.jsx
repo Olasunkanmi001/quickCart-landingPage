@@ -1,0 +1,38 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  FaArrowLeft,
+  FaBiking,
+  FaMapMarkerAlt,
+  FaClock,
+  FaDollarSign,
+} from "react-icons/fa";
+
+const RiderLanding = () => {
+  return (
+    <div className="bg-white">
+      {/* Optional: Back to Home link */}
+      <div className="bg-gray-50 px-6 py-3 border-b">
+        <Link
+          to="/"
+          className="flex items-center space-x-2 text-gray-700 hover:text-black transition-colors w-fit"
+        >
+          <FaArrowLeft size={16} />
+          <span className="text-sm">Back to Home</span>
+        </Link>
+      </div>
+
+      {/* Hero Section */}
+
+      {/* Features Section */}
+
+      {/* Testimonials Section */}
+
+      {/* Vendor Pricing Section */}
+
+      {/* Vendor Waitlist Section */}
+    </div>
+  );
+};
+
+export default RiderLanding;
