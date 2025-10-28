@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import VendorHero from "./vendorHero";
 import VendorFeatures from "./vendorFeatures";
@@ -14,6 +14,11 @@ import {
 } from "react-icons/fa";
 
 const VendorLanding = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-white">
       {/* Optional: Back to Home link */}
