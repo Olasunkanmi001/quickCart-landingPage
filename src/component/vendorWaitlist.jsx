@@ -85,6 +85,11 @@ const VendorWaitlist = () => {
             Start Free
           </button>
         </form>
+
+        {/* Fine Print */}
+        <p className="font-nunito font-medium text-[18px] text-white opacity-80 mt-6" style={{ lineHeight: '32.9px' }}>
+          No credit card required. 14-day free trial.
+        </p>
       </div>
     </section>
   );
