@@ -9,6 +9,9 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Check if we're on the vendor landing page
+  const isVendorLandingPage = location.pathname === "/vendorLanding";
+
   const navLinks = [
     { name: "How it Works", href: "#how-it-works" },
     { name: "Marketplace", href: "#marketplace" },
@@ -102,7 +105,32 @@ const Header = () => {
       </div>
 
       <div className="flex items-center space-x-4">
-        {/* Dark mode toggle */}
+        {/* Conditionally show Login and Get Started Free only on vendor landing page */}
+        {isVendorLandingPage && (
+          <>
+            {/* Login Link */}
+            <Link
+              to="/login"
+              className="text-gray-700 hover:text-black font-medium transition-colors duration-300"
+            >
+              Login
+            </Link>
+
+            {/* Get Started Free button */}
+            <button className="bg-gradient-to-r from-[#01AC74] to-[#08A420] text-white font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center px-4 py-2 text-sm">
+              Get Started Free
+            </button>
+          </>
+        )}
+
+        {/* Show Get App button when NOT on vendor landing page */}
+        {!isVendorLandingPage && (
+          <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+            Get App
+          </button>
+        )}
+
+        {/* Dark mode toggle - always visible */}
         <button
           onClick={() => setDarkMode(!darkMode)}
           className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition"
@@ -112,11 +140,6 @@ const Header = () => {
           ) : (
             <FaMoon className="text-gray-700" size={20} />
           )}
-        </button>
-
-        {/* Get App button */}
-        <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
-          Get App
         </button>
 
         {/* Mobile Menu Icon */}
@@ -166,9 +189,36 @@ const Header = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-gray-300 placeholder:text-gray-300"
             />
           </div>
-          <button className="w-full bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
-            Get App
-          </button>
+
+          {/* Conditionally show Login and Get Started Free only on vendor landing page */}
+          {isVendorLandingPage ? (
+            <>
+              {/* Login Link */}
+              <Link
+                to="/login"
+                className="text-gray-700 hover:text-black font-medium transition-colors duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                Login
+              </Link>
+
+              {/* Get Started Free button */}
+              <button
+                className="w-full bg-gradient-to-r from-[#01AC74] to-[#08A420] text-white font-inter font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center py-3"
+                onClick={() => setIsOpen(false)}
+              >
+                Get Started Free
+              </button>
+            </>
+          ) : (
+            /* Show Get App button when NOT on vendor landing page */
+            <button
+              className="w-full bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
+              onClick={() => setIsOpen(false)}
+            >
+              Get App
+            </button>
+          )}
         </div>
       )}
     </header>
