@@ -89,6 +89,8 @@ const VendorPricing = () => {
             )}
             {/* Most Popular Badge - Only for Professional plan */}
             {plan.isPopular && (
+              /*I replaced the borderImage approach with a pseudo-border technique using absolute positioning:
+                No longer using the conflicting borderImage property*/
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <div
                   className="bg-gradient-to-r from-[#01AC74] to-[#08A420] rounded-[14.4px] flex items-center justify-center"
@@ -125,10 +127,10 @@ const VendorPricing = () => {
 
             {/* CTA Button */}
             <button
-              className={`w-full max-w-[369.6px] h-[52.8px] rounded-[14.4px] font-nunito font-bold text-center transition-all duration-300 hover:scale-105 mb-8 flex items-center justify-center ${
+              className={`w-full max-w-[369.6px] h-[52.8px] rounded-[14.4px] font-nunito font-bold text-center transition-all duration-300 hover:scale-105 active:scale-95 active:shadow-inner transform mb-8 flex items-center justify-center ${
                 plan.isPopular
-                  ? "bg-gradient-to-r from-[#01AC74] to-[#08A420] text-white text-[19.2px] leading-[39.5px]"
-                  : "bg-white border border-black border-opacity-20 text-[#010101] opacity-60 text-[16px] leading-[20px] px-4"
+                  ? "bg-gradient-to-r from-[#01AC74] to-[#08A420] text-white text-[19.2px] leading-[39.5px] hover:from-[#019963] hover:to-[#078a1c] active:from-[#018754] active:to-[#067a18] hover:shadow-lg"
+                  : "bg-white border border-black border-opacity-20 text-[#010101] opacity-60 text-[16px] leading-[20px] px-4 hover:bg-gray-50 hover:opacity-80 hover:shadow-md active:bg-gray-100 active:shadow-inner"
               }`}
               style={{
                 borderWidth: plan.isPopular ? "0" : "1.2px",
