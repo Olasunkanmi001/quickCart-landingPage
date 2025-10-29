@@ -31,12 +31,10 @@ const RiderLanding = () => {
 
       <RiderHero />
       <RiderInfo />
-
-      {/* Why Work With Us Section */}
       <RiderWhyWorkWithUs />
-      {/* AI Assistant Section */}
 
       {/* CTA Section */}
+      {/* Rider Banner */}
     </div>
   );
 };
