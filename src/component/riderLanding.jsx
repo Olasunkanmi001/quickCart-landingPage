@@ -10,6 +10,7 @@ import {
   FaDollarSign,
 } from "react-icons/fa";
 import RiderWhyWorkWithUs from "./riderWhyWorkWithUs";
+import RiderCTA from "./rider.CTA";
 
 const RiderLanding = () => {
   // Scroll to top when component mounts
@@ -34,6 +35,7 @@ const RiderLanding = () => {
       <RiderWhyWorkWithUs />
 
       {/* CTA Section */}
+      <RiderCTA />
       {/* Rider Banner */}
     </div>
   );
