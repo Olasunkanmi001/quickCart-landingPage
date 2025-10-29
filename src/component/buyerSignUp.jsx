@@ -147,9 +147,23 @@ const BuyerSignUp = () => {
                       type="text"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm ${
                         errors.firstName ? "border-red-300" : "border-gray-300"
                       }`}
+                      style={{
+                        "--focus-ring-color": "#0B4863",
+                      }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = "#0B4863";
+                        e.target.style.boxShadow =
+                          "0 0 0 3px rgba(11, 72, 99, 0.1)";
+                      }}
+                      onBlur={(e) => {
+                        if (!errors.firstName) {
+                          e.target.style.borderColor = "#d1d5db";
+                          e.target.style.boxShadow = "none";
+                        }
+                      }}
                       placeholder="Enter your first name"
                     />
                     {errors.firstName && (
@@ -175,9 +189,20 @@ const BuyerSignUp = () => {
                       type="text"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm ${
                         errors.lastName ? "border-red-300" : "border-gray-300"
                       }`}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = "#0B4863";
+                        e.target.style.boxShadow =
+                          "0 0 0 3px rgba(11, 72, 99, 0.1)";
+                      }}
+                      onBlur={(e) => {
+                        if (!errors.lastName) {
+                          e.target.style.borderColor = "#d1d5db";
+                          e.target.style.boxShadow = "none";
+                        }
+                      }}
                       placeholder="Enter your last name"
                     />
                     {errors.lastName && (
@@ -203,9 +228,20 @@ const BuyerSignUp = () => {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm ${
                         errors.email ? "border-red-300" : "border-gray-300"
                       }`}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = "#0B4863";
+                        e.target.style.boxShadow =
+                          "0 0 0 3px rgba(11, 72, 99, 0.1)";
+                      }}
+                      onBlur={(e) => {
+                        if (!errors.email) {
+                          e.target.style.borderColor = "#d1d5db";
+                          e.target.style.boxShadow = "none";
+                        }
+                      }}
                       placeholder="Enter your email"
                     />
                     {errors.email && (
@@ -231,11 +267,22 @@ const BuyerSignUp = () => {
                       type="tel"
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
-                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm ${
                         errors.phoneNumber
                           ? "border-red-300"
                           : "border-gray-300"
                       }`}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = "#0B4863";
+                        e.target.style.boxShadow =
+                          "0 0 0 3px rgba(11, 72, 99, 0.1)";
+                      }}
+                      onBlur={(e) => {
+                        if (!errors.phoneNumber) {
+                          e.target.style.borderColor = "#d1d5db";
+                          e.target.style.boxShadow = "none";
+                        }
+                      }}
                       placeholder="Enter your phone number"
                     />
                     {errors.phoneNumber && (
@@ -261,9 +308,20 @@ const BuyerSignUp = () => {
                       type="password"
                       value={formData.password}
                       onChange={handleInputChange}
-                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm ${
                         errors.password ? "border-red-300" : "border-gray-300"
                       }`}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = "#0B4863";
+                        e.target.style.boxShadow =
+                          "0 0 0 3px rgba(11, 72, 99, 0.1)";
+                      }}
+                      onBlur={(e) => {
+                        if (!errors.password) {
+                          e.target.style.borderColor = "#d1d5db";
+                          e.target.style.boxShadow = "none";
+                        }
+                      }}
                       placeholder="Create a password"
                     />
                     {errors.password && (
@@ -289,11 +347,22 @@ const BuyerSignUp = () => {
                       type="password"
                       value={formData.confirmPassword}
                       onChange={handleInputChange}
-                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm ${
                         errors.confirmPassword
                           ? "border-red-300"
                           : "border-gray-300"
                       }`}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = "#0B4863";
+                        e.target.style.boxShadow =
+                          "0 0 0 3px rgba(11, 72, 99, 0.1)";
+                      }}
+                      onBlur={(e) => {
+                        if (!errors.confirmPassword) {
+                          e.target.style.borderColor = "#d1d5db";
+                          e.target.style.boxShadow = "none";
+                        }
+                      }}
                       placeholder="Confirm your password"
                     />
                     {errors.confirmPassword && (
@@ -309,9 +378,23 @@ const BuyerSignUp = () => {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black ${
+                    className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                       isLoading ? "opacity-50 cursor-not-allowed" : ""
                     }`}
+                    style={{
+                      backgroundColor: "#0B4863",
+                      focusRingColor: "#0B4863",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isLoading) {
+                        e.target.style.backgroundColor = "#0a3e56";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isLoading) {
+                        e.target.style.backgroundColor = "#0B4863";
+                      }
+                    }}
                   >
                     {isLoading ? "Creating Account..." : "Create Account"}
                   </button>
