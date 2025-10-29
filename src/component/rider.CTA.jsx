@@ -40,7 +40,7 @@ const RiderCTA = () => {
             {/* Top half - E78E86 */}
             <div
               className="absolute top-0 left-0 w-full h-1/2"
-              style={{ backgroundColor: "#E78E86" }}
+              style={{ backgroundColor: "#8BB7FE" }}
             ></div>
             {/* Bottom half - 17181A */}
             <div
@@ -66,7 +66,7 @@ const RiderCTA = () => {
             {/* Top half - E78E86 */}
             <div
               className="absolute top-0 left-0 w-full h-1/2"
-              style={{ backgroundColor: "#E78E86" }}
+              style={{ backgroundColor: "#00C695" }}
             ></div>
             {/* Bottom half - 17181A */}
             <div
