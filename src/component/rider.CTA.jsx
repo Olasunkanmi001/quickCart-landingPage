@@ -10,7 +10,7 @@ const RiderCTA = () => {
           {/* Card 1 */}
           <div
             className="rounded-lg overflow-hidden relative w-full max-w-md mx-auto"
-            style={{ height: "280px" }}
+            style={{ height: "380px" }}
           >
             {/* Top half - E78E86 */}
             <div
@@ -24,11 +24,11 @@ const RiderCTA = () => {
             ></div>
             {/* Content overlay - positioned in bottom half only */}
             <div className="absolute bottom-0 left-0 w-full h-1/2 z-10 p-6 md:p-8 flex flex-col justify-center items-start">
-              <div className="text-left text-white space-y-3">
-                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">
+              <div className="text-left text-white">
+                <h3 className="text-lg md:text-xl font-bold mb-1">
                   Need a meal fast?
                 </h3>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-3">
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-12">
                   Skip the wait,{" "}
                   <span style={{ color: "#E78E86" }}>Quickcart</span> deliver
                   your cravings right to your doorsteps.
@@ -50,7 +50,7 @@ const RiderCTA = () => {
           {/* Card 2 */}
           <div
             className="rounded-lg overflow-hidden relative w-full max-w-md mx-auto"
-            style={{ height: "280px" }}
+            style={{ height: "380px" }}
           >
             {/* Top half - E78E86 */}
             <div
@@ -78,7 +78,7 @@ const RiderCTA = () => {
           {/* Card 3 */}
           <div
             className="rounded-lg overflow-hidden relative w-full max-w-md mx-auto"
-            style={{ height: "280px" }}
+            style={{ height: "380px" }}
           >
             {/* Top half - E78E86 */}
             <div
