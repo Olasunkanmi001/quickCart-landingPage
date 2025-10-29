@@ -66,11 +66,23 @@ const RiderCTA = () => {
             <div className="absolute bottom-0 left-0 w-full h-1/2 z-10 p-6 md:p-8 flex flex-col justify-center items-start">
               <div className="text-left text-white space-y-3">
                 <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">
-                  Card Title 2
+                  Own a Business?
                 </h3>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                  Card content goes here. Add your description or features.
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
+                  Grow your business while we handle the deliveries. with
+                  <span style={{ color: "#8BB7FE" }}> Quickcart</span>, your
+                  customer get it right on time.
                 </p>
+                <div className="flex items-center">
+                  <a
+                    href="#"
+                    className="font-nunito font-normal text-sm md:text-base mr-2 hover:text-white transition-colors duration-300"
+                    style={{ color: "rgba(255, 255, 255, 0.7)" }}
+                  >
+                    Learn More
+                  </a>
+                  <FaArrowRight size={14} style={{ color: "#8BB7FE" }} />
+                </div>
               </div>
             </div>
           </div>
