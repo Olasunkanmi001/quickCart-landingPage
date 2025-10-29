@@ -9,6 +9,7 @@ import {
   FaClock,
   FaDollarSign,
 } from "react-icons/fa";
+import RiderWhyWorkWithUs from "./riderWhyWorkWithUs";
 
 const RiderLanding = () => {
   // Scroll to top when component mounts
@@ -18,7 +19,6 @@ const RiderLanding = () => {
 
   return (
     <div className="bg-white">
-      {/* Optional: Back to Home link */}
       <div className="bg-gray-50 px-6 py-3 border-b">
         <Link
           to="/"
@@ -29,13 +29,11 @@ const RiderLanding = () => {
         </Link>
       </div>
 
-      {/* Hero Section */}
       <RiderHero />
-      {/* Info Section */}
       <RiderInfo />
 
       {/* Why Work With Us Section */}
-
+      <RiderWhyWorkWithUs />
       {/* AI Assistant Section */}
 
       {/* CTA Section */}
