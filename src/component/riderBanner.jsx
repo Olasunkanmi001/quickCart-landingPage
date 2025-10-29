@@ -142,7 +142,7 @@ const RiderBanner = () => {
               transition: "all 1.5s ease-out 0.8s",
               zIndex: 3,
               flexShrink: 0,
-              paddingLeft: isMobile ? "0" : "40px", // Remove padding on mobile
+              paddingLeft: isMobile ? "0" : "300px", // Remove padding on mobile
             }}
           >
             <img
