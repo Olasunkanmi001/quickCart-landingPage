@@ -6,10 +6,23 @@ const RiderBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [showSubText, setShowSubText] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
 
   const titleText = "Your time. Your goals.\nYou're the boss.";
   const subText = "Drive, deliver and earn with Quickcart";
+
+  // Handle responsive layout
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    handleResize(); // Set initial state
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -64,113 +77,7 @@ const RiderBanner = () => {
   }, [isVisible, titleText]);
 
   return (
-    <section
-      ref={sectionRef}
-      style={{
-        height: "500px",
-        backgroundImage: `url(${bannerImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        position: "relative",
-      }}
-    >
-      {/* Black overlay that fades out to reveal the image */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "black",
-          opacity: isVisible ? 0 : 1,
-          transition: "opacity 1.5s ease-in-out",
-          zIndex: 1,
-        }}
-      />
-
-      {/* Profile Image on the left side */}
-      <div
-        style={{
-          position: "absolute",
-          left: "300px",
-          top: "50%",
-          transform: isVisible ? "translateY(-50%)" : "translate(-350px, -50%)",
-          opacity: isVisible ? 1 : 0,
-          transition: "all 1.5s ease-out 0.8s",
-          zIndex: 3,
-        }}
-      >
-        <img
-          src={profileImage}
-          alt="Rider Profile"
-          style={{
-            width: "300px",
-            height: "auto",
-            borderRadius: "10px",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
-          }}
-        />
-      </div>
-
-      {/* Title and Subtitle Text on the right side */}
-      <div
-        style={{
-          position: "absolute",
-          left: "650px", // Position to the right of profile image (300px + 300px width + 50px gap)
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: 3,
-          maxWidth: "700px",
-        }}
-      >
-        {/* Main Title with Typewriter Effect */}
-        <h1
-          style={{
-            fontFamily: "Nunito Sans, sans-serif",
-            fontWeight: "800", // extrabold
-            fontSize: "52px",
-            lineHeight: "71px",
-            color: "white",
-            textAlign: "left",
-            margin: "0 0 20px 0",
-            whiteSpace: "pre-line", // Allows \n to create line breaks
-          }}
-        >
-          {displayedText}
-          <span
-            style={{
-              opacity: displayedText.length < titleText.length ? 1 : 0,
-              animation:
-                displayedText.length < titleText.length
-                  ? "blink 1s infinite"
-                  : "none",
-            }}
-          >
-            |
-          </span>
-        </h1>
-
-        {/* Subtitle Text */}
-        <p
-          style={{
-            fontFamily: "Nunito Sans, sans-serif",
-            fontWeight: "600", // semibold
-            fontSize: "32px",
-            lineHeight: "24px",
-            color: "white",
-            textAlign: "left",
-            margin: "0",
-            opacity: showSubText ? 1 : 0,
-            transition: "opacity 1s ease-in-out",
-          }}
-        >
-          {subText}
-        </p>
-      </div>
-
-      {/* CSS for blinking cursor */}
+    <>
       <style>
         {`
           @keyframes blink {
@@ -179,7 +86,131 @@ const RiderBanner = () => {
           }
         `}
       </style>
-    </section>
+      <section
+        ref={sectionRef}
+        style={{
+          height: "500px",
+          backgroundImage: `url(${bannerImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Black overlay */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "black",
+            opacity: isVisible ? 0 : 1,
+            transition: "opacity 1.5s ease-in-out",
+            zIndex: 1,
+          }}
+        />
+
+        {/* Responsive container */}
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "100%",
+            maxWidth: "1400px",
+            margin: "0 auto",
+            padding: "0 20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: isMobile ? "center" : "space-between",
+            flexDirection: isMobile ? "column" : "row", // Stack on tablet/mobile
+            gap: isMobile ? "2rem" : "0", // Add gap when stacked
+            zIndex: 2,
+          }}
+        >
+          {/* Profile Image */}
+          <div
+            style={{
+              transform: isVisible
+                ? "translateX(0)"
+                : isMobile
+                ? "translateY(-50px)"
+                : "translateX(-350px)",
+              opacity: isVisible ? 1 : 0,
+              transition: "all 1.5s ease-out 0.8s",
+              zIndex: 3,
+              flexShrink: 0,
+              paddingLeft: isMobile ? "0" : "40px", // Remove padding on mobile
+            }}
+          >
+            <img
+              src={profileImage}
+              alt="Rider Profile"
+              style={{
+                width: "clamp(200px, 25vw, 300px)",
+                height: "auto",
+                borderRadius: "10px",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+              }}
+            />
+          </div>
+
+          {/* Text Content */}
+          <div
+            style={{
+              zIndex: 3,
+              maxWidth: isMobile ? "90%" : "50%", // Full width on mobile
+              marginLeft: isMobile ? "0" : "2rem", // No margin on mobile
+              textAlign: isMobile ? "center" : "left", // Center text on mobile
+            }}
+          >
+            <h1
+              style={{
+                fontFamily: "Nunito Sans, sans-serif",
+                fontWeight: "800",
+                fontSize: "clamp(28px, 4vw, 52px)",
+                lineHeight: "1.4",
+                color: "white",
+                textAlign: isMobile ? "center" : "left",
+                margin: "0 0 20px 0",
+                whiteSpace: "pre-line",
+              }}
+            >
+              {displayedText}
+              <span
+                style={{
+                  opacity: displayedText.length < titleText.length ? 1 : 0,
+                  animation:
+                    displayedText.length < titleText.length
+                      ? "blink 1s infinite"
+                      : "none",
+                }}
+              >
+                |
+              </span>
+            </h1>
+
+            <p
+              style={{
+                fontFamily: "Nunito Sans, sans-serif",
+                fontWeight: "600",
+                fontSize: "clamp(18px, 2.5vw, 32px)",
+                lineHeight: "1.2",
+                color: "white",
+                textAlign: isMobile ? "center" : "left",
+                margin: "0",
+                opacity: showSubText ? 1 : 0,
+                transition: "opacity 1s ease-in-out",
+              }}
+            >
+              {subText}
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
