@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import RiderHero from "./riderHero";
 import RiderInfo from "./riderInfo";
+import RiderWhyWorkWithUs from "./riderWhyWorkWithUs";
+import RiderCTA from "./rider.CTA";
 import {
   FaArrowLeft,
   FaBiking,
@@ -9,8 +11,6 @@ import {
   FaClock,
   FaDollarSign,
 } from "react-icons/fa";
-import RiderWhyWorkWithUs from "./riderWhyWorkWithUs";
-import RiderCTA from "./rider.CTA";
 
 const RiderLanding = () => {
   // Scroll to top when component mounts
@@ -29,12 +29,9 @@ const RiderLanding = () => {
           <span className="text-sm">Back to Home</span>
         </Link>
       </div>
-
       <RiderHero />
       <RiderInfo />
       <RiderWhyWorkWithUs />
-
-      {/* CTA Section */}
       <RiderCTA />
       {/* Rider Banner */}
     </div>
