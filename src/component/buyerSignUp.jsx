@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import cartImage from "../assets/cart-image.png";
 
 const BuyerSignUp = () => {
   const [formData, setFormData] = useState({
@@ -95,229 +96,262 @@ const BuyerSignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
-          Create your QuickCart account
-        </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Join thousands of happy shoppers
-        </p>
+    <div className="min-h-screen bg-gray-50 flex">
+      {/* Left side - Image */}
+      <div className="hidden lg:flex lg:w-1/2 bg-white items-center justify-center p-12">
+        <div className="max-w-md">
+          <img
+            src={cartImage}
+            alt="Shopping Cart Illustration"
+            className="w-full h-auto object-contain"
+          />
+          <div className="mt-8 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Start Your Shopping Journey
+            </h3>
+            <p className="text-gray-600 leading-relaxed">
+              Discover amazing fashion finds from verified vendors near you.
+              Join thousands of happy shoppers today!
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* First Name */}
-            <div>
-              <label
-                htmlFor="firstName"
-                className="block text-sm font-medium text-gray-700"
-              >
-                First Name
-              </label>
-              <div className="mt-1">
-                <input
-                  id="firstName"
-                  name="firstName"
-                  type="text"
-                  value={formData.firstName}
-                  onChange={handleInputChange}
-                  className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
-                    errors.firstName ? "border-red-300" : "border-gray-300"
-                  }`}
-                  placeholder="Enter your first name"
-                />
-                {errors.firstName && (
-                  <p className="mt-1 text-sm text-red-600">
-                    {errors.firstName}
-                  </p>
-                )}
+      {/* Right side - Form */}
+      <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-20 xl:px-24">
+        <div className="mx-auto w-full max-w-sm lg:w-96">
+          <div>
+            <h2 className="mt-6 text-3xl font-bold text-gray-900">
+              Create your QuickCart account
+            </h2>
+            <p className="mt-2 text-sm text-gray-600">
+              Join thousands of happy shoppers
+            </p>
+          </div>
+
+          <div className="mt-8">
+            <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* First Name */}
+                <div>
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    First Name
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      id="firstName"
+                      name="firstName"
+                      type="text"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                        errors.firstName ? "border-red-300" : "border-gray-300"
+                      }`}
+                      placeholder="Enter your first name"
+                    />
+                    {errors.firstName && (
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.firstName}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Last Name */}
+                <div>
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Last Name
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      id="lastName"
+                      name="lastName"
+                      type="text"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                        errors.lastName ? "border-red-300" : "border-gray-300"
+                      }`}
+                      placeholder="Enter your last name"
+                    />
+                    {errors.lastName && (
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.lastName}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Email Address
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                        errors.email ? "border-red-300" : "border-gray-300"
+                      }`}
+                      placeholder="Enter your email"
+                    />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Phone Number */}
+                <div>
+                  <label
+                    htmlFor="phoneNumber"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Phone Number
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      type="tel"
+                      value={formData.phoneNumber}
+                      onChange={handleInputChange}
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                        errors.phoneNumber
+                          ? "border-red-300"
+                          : "border-gray-300"
+                      }`}
+                      placeholder="Enter your phone number"
+                    />
+                    {errors.phoneNumber && (
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.phoneNumber}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Password */}
+                <div>
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Password
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      id="password"
+                      name="password"
+                      type="password"
+                      value={formData.password}
+                      onChange={handleInputChange}
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                        errors.password ? "border-red-300" : "border-gray-300"
+                      }`}
+                      placeholder="Create a password"
+                    />
+                    {errors.password && (
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.password}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Confirm Password */}
+                <div>
+                  <label
+                    htmlFor="confirmPassword"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Confirm Password
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      type="password"
+                      value={formData.confirmPassword}
+                      onChange={handleInputChange}
+                      className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
+                        errors.confirmPassword
+                          ? "border-red-300"
+                          : "border-gray-300"
+                      }`}
+                      placeholder="Confirm your password"
+                    />
+                    {errors.confirmPassword && (
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.confirmPassword}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <div>
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black ${
+                      isLoading ? "opacity-50 cursor-not-allowed" : ""
+                    }`}
+                  >
+                    {isLoading ? "Creating Account..." : "Create Account"}
+                  </button>
+                </div>
+
+                {/* Terms and Privacy */}
+                <div className="text-xs text-gray-500 text-center">
+                  By creating an account, you agree to our{" "}
+                  <Link to="/terms" className="text-black hover:underline">
+                    Terms of Service
+                  </Link>{" "}
+                  and{" "}
+                  <Link to="/privacy" className="text-black hover:underline">
+                    Privacy Policy
+                  </Link>
+                </div>
+              </form>
+
+              {/* Login Link */}
+              <div className="mt-6">
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-300" />
+                  </div>
+                  <div className="relative flex justify-center text-sm">
+                    <span className="px-2 bg-white text-gray-500">
+                      Already have an account?
+                    </span>
+                  </div>
+                </div>
+
+                <div className="mt-3">
+                  <Link
+                    to="/buyerLogin"
+                    className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                  >
+                    Sign In
+                  </Link>
+                </div>
               </div>
-            </div>
-
-            {/* Last Name */}
-            <div>
-              <label
-                htmlFor="lastName"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Last Name
-              </label>
-              <div className="mt-1">
-                <input
-                  id="lastName"
-                  name="lastName"
-                  type="text"
-                  value={formData.lastName}
-                  onChange={handleInputChange}
-                  className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
-                    errors.lastName ? "border-red-300" : "border-gray-300"
-                  }`}
-                  placeholder="Enter your last name"
-                />
-                {errors.lastName && (
-                  <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Email */}
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email Address
-              </label>
-              <div className="mt-1">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
-                    errors.email ? "border-red-300" : "border-gray-300"
-                  }`}
-                  placeholder="Enter your email"
-                />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-600">{errors.email}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Phone Number */}
-            <div>
-              <label
-                htmlFor="phoneNumber"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Phone Number
-              </label>
-              <div className="mt-1">
-                <input
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  type="tel"
-                  value={formData.phoneNumber}
-                  onChange={handleInputChange}
-                  className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
-                    errors.phoneNumber ? "border-red-300" : "border-gray-300"
-                  }`}
-                  placeholder="Enter your phone number"
-                />
-                {errors.phoneNumber && (
-                  <p className="mt-1 text-sm text-red-600">
-                    {errors.phoneNumber}
-                  </p>
-                )}
-              </div>
-            </div>
-
-            {/* Password */}
-            <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Password
-              </label>
-              <div className="mt-1">
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  value={formData.password}
-                  onChange={handleInputChange}
-                  className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
-                    errors.password ? "border-red-300" : "border-gray-300"
-                  }`}
-                  placeholder="Create a password"
-                />
-                {errors.password && (
-                  <p className="mt-1 text-sm text-red-600">{errors.password}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Confirm Password */}
-            <div>
-              <label
-                htmlFor="confirmPassword"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Confirm Password
-              </label>
-              <div className="mt-1">
-                <input
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  type="password"
-                  value={formData.confirmPassword}
-                  onChange={handleInputChange}
-                  className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm ${
-                    errors.confirmPassword
-                      ? "border-red-300"
-                      : "border-gray-300"
-                  }`}
-                  placeholder="Confirm your password"
-                />
-                {errors.confirmPassword && (
-                  <p className="mt-1 text-sm text-red-600">
-                    {errors.confirmPassword}
-                  </p>
-                )}
-              </div>
-            </div>
-
-            {/* Submit Button */}
-            <div>
-              <button
-                type="submit"
-                disabled={isLoading}
-                className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black ${
-                  isLoading ? "opacity-50 cursor-not-allowed" : ""
-                }`}
-              >
-                {isLoading ? "Creating Account..." : "Create Account"}
-              </button>
-            </div>
-
-            {/* Terms and Privacy */}
-            <div className="text-xs text-gray-500 text-center">
-              By creating an account, you agree to our{" "}
-              <Link to="/terms" className="text-black hover:underline">
-                Terms of Service
-              </Link>{" "}
-              and{" "}
-              <Link to="/privacy" className="text-black hover:underline">
-                Privacy Policy
-              </Link>
-            </div>
-          </form>
-
-          {/* Login Link */}
-          <div className="mt-6">
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">
-                  Already have an account?
-                </span>
-              </div>
-            </div>
-
-            <div className="mt-3">
-              <Link
-                to="/buyerLogin"
-                className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-              >
-                Sign In
-              </Link>
             </div>
           </div>
         </div>
