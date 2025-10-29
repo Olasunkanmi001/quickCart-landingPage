@@ -4,6 +4,7 @@ import RiderHero from "./riderHero";
 import RiderInfo from "./riderInfo";
 import RiderWhyWorkWithUs from "./riderWhyWorkWithUs";
 import RiderCTA from "./rider.CTA";
+import RiderBanner from "./riderBanner";
 import {
   FaArrowLeft,
   FaBiking,
@@ -33,7 +34,7 @@ const RiderLanding = () => {
       <RiderInfo />
       <RiderWhyWorkWithUs />
       <RiderCTA />
-      {/* Rider Banner */}
+      <RiderBanner />
     </div>
   );
 };
