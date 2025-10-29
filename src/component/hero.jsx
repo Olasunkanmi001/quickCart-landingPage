@@ -1,10 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaStore, FaBiking } from "react-icons/fa";
 import picture from "../assets/front-view-woman-wearing-hat (1) 1.png";
 import pic from "../assets/layer_1.png";
+import { checkAuthStatus, verifyCredentials } from "../utils/auth";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const handleStartShopping = async () => {
+    const { isLoggedIn } = checkAuthStatus();
+
+    if (isLoggedIn) {
+      // User appears to be logged in, verify credentials
+      try {
+        const verification = await verifyCredentials();
+
+        if (verification.success) {
+          // Credentials are valid, redirect to dashboard
+          navigate("/buyerDashboard");
+        } else {
+          // Credentials are invalid, redirect to signup
+          navigate("/buyerSignUp");
+        }
+      } catch (error) {
+        // Error verifying credentials, redirect to signup
+        console.error("Error verifying credentials:", error);
+        navigate("/buyerSignUp");
+      }
+    } else {
+      // User is not logged in, redirect to signup
+      navigate("/buyerSignUp");
+    }
+  };
   return (
     <section className="w-full bg-white font-sans pt-5">
       {/* Top bar: Become Vendor / Rider */}
@@ -44,7 +72,10 @@ const HeroSection = () => {
             <button className="bg-black text-white px-6 py-3 rounded-md font-medium border border-black transition-colors hover:bg-white hover:text-black">
               Get App
             </button>
-            <button className="border border-black text-black px-6 py-3 rounded-md font-medium transition-colors hover:bg-black hover:text-white">
+            <button
+              onClick={handleStartShopping}
+              className="border border-black text-black px-6 py-3 rounded-md font-medium transition-colors hover:bg-black hover:text-white"
+            >
               Start Shopping
             </button>
           </div>
