@@ -6,6 +6,7 @@ import RiderLanding from "./component/riderLanding";
 import BuyerSignUp from "./component/buyerSignUp";
 import BuyerLogin from "./component/buyerLogin";
 import BuyerDashboard from "./component/buyerDashboard";
+import ProductLanding from "./component/productLanding";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/buyerSignUp" element={<BuyerSignUp />} />
           <Route path="/buyerLogin" element={<BuyerLogin />} />
           <Route path="/buyerDashboard" element={<BuyerDashboard />} />
+          <Route path="/productLanding" element={<ProductLanding />} />
         </Routes>
       </Layout>
     </Router>
