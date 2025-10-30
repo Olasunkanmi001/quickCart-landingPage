@@ -208,7 +208,9 @@ const BuyerSignUp = () => {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm ${
-                          errors.firstName ? "border-red-300" : "border-gray-300"
+                          errors.firstName
+                            ? "border-red-300"
+                            : "border-gray-300"
                         }`}
                         style={{
                           "--focus-ring-color": "#0B4863",
@@ -595,7 +597,10 @@ const BuyerSignUp = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* First Name */}
             <div>
-              <label htmlFor="mobile-firstName" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="mobile-firstName"
+                className="block text-sm font-medium text-gray-700"
+              >
                 First Name
               </label>
               <input
@@ -616,7 +621,10 @@ const BuyerSignUp = () => {
 
             {/* Last Name */}
             <div>
-              <label htmlFor="mobile-lastName" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="mobile-lastName"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Last Name
               </label>
               <input
@@ -637,7 +645,10 @@ const BuyerSignUp = () => {
 
             {/* Email */}
             <div>
-              <label htmlFor="mobile-email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="mobile-email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email Address
               </label>
               <input
@@ -658,7 +669,10 @@ const BuyerSignUp = () => {
 
             {/* Phone Number */}
             <div>
-              <label htmlFor="mobile-phoneNumber" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="mobile-phoneNumber"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Phone Number
               </label>
               <input
@@ -673,13 +687,18 @@ const BuyerSignUp = () => {
                 placeholder="Enter your phone number"
               />
               {errors.phoneNumber && (
-                <p className="mt-1 text-sm text-red-600">{errors.phoneNumber}</p>
+                <p className="mt-1 text-sm text-red-600">
+                  {errors.phoneNumber}
+                </p>
               )}
             </div>
 
             {/* Password */}
             <div>
-              <label htmlFor="mobile-password" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="mobile-password"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Password
               </label>
               <input
@@ -700,7 +719,10 @@ const BuyerSignUp = () => {
 
             {/* Confirm Password */}
             <div>
-              <label htmlFor="mobile-confirmPassword" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="mobile-confirmPassword"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Confirm Password
               </label>
               <input
@@ -715,7 +737,9 @@ const BuyerSignUp = () => {
                 placeholder="Confirm your password"
               />
               {errors.confirmPassword && (
-                <p className="mt-1 text-sm text-red-600">{errors.confirmPassword}</p>
+                <p className="mt-1 text-sm text-red-600">
+                  {errors.confirmPassword}
+                </p>
               )}
             </div>
 
